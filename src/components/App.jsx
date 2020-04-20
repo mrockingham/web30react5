@@ -26,14 +26,16 @@ export default function App() {
 
   return (
     <div className='container'>
-      <header><h1>Friends App</h1><a href='/'>Home</a></header>
+      <header><h1>Friends App</h1><Route path='/friends/:id'><a href='/'>Home</a></Route></header>
       {/* STEP 3 WRAP COMPONENTS IN ROUTES */}
       {/* the path props is what needs to 'match' in the url in order to render */}
       <Switch>
+        {/* the switch makes it so that only first route encountered inside renders */}
         <Route path='/friends/:id'>
           <Friend />
         </Route>
 
+        {/* put the least specific path at the end of the switch */}
         <Route path='/'>
           <FriendsList friends={friends} />
         </Route>
