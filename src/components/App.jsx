@@ -26,7 +26,8 @@ export default function App() {
 
   return (
     <div className='container'>
-      <header><h1>Friends App</h1><Route path='/friends/:id'><a href='/'>Home</a></Route></header>
+      {/* STEP 4 - use Link components to change the URL without hard reload (History API) */}
+      <header><h1>Friends App</h1><Route path='/friends/:id'><Link to='/'>Home</Link></Route></header>
       {/* STEP 3 WRAP COMPONENTS IN ROUTES */}
       {/* the path props is what needs to 'match' in the url in order to render */}
       <Switch>
