@@ -24,6 +24,6 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "react/prop-types": 1
+        "react/prop-types": 0
     }
 };
