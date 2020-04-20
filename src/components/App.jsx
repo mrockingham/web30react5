@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+// these will render conditionally depending on URL
 import FriendsList from './FriendsList'
 import Friend from './Friend'
 
@@ -24,7 +25,7 @@ export default function App() {
     <div className='container'>
       <header><h1>Friends App</h1><a href='/'>Home</a></header>
 
-      {/* <FriendsList /> */}
+      <FriendsList friends={friends} />
 
       <Friend />
     </div>
