@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function FriendsList(props) {
   if (!props.friends.length) {
@@ -10,7 +11,7 @@ function FriendsList(props) {
       {
         props.friends.map(friend => {
           return (
-            <div key={friend.id}>🔥 {friend.name} <a href='/friends/1'>details</a></div>
+            <div key={friend.id}>🔥 {friend.name} <Link to='/friends/1'>details</Link></div>
           )
         })
       }
