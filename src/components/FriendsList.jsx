@@ -11,7 +11,7 @@ function FriendsList(props) {
       {
         props.friends.map(friend => {
           return (
-            <div key={friend.id}>🔥 {friend.name} <Link to='/friends/1'>details</Link></div>
+            <div key={friend.id}>🔥 {friend.name} <Link to={`/friends/${friend.id}`}>details</Link></div>
           )
         })
       }
