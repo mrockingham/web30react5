@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Switch, Link } from 'react-router-dom'
 import axios from 'axios'
 
 import FriendsList from './FriendsList'
@@ -17,21 +16,17 @@ export default function App() {
       })
       .catch(err => {
         debugger
+        console.log(err)
       })
   }, [])
 
   return (
     <div className='container'>
-      <header><h1>Friends App</h1> <Route path='/friends'><Link to='/'>Home</Link></Route></header>
-      <Switch>
-        <Route path='/friends/:id'>
-          <Friend />
-        </Route>
+      <header><h1>Friends App</h1><a href='/'>Home</a></header>
 
-        <Route path='/'>
-          <FriendsList friends={friends} />
-        </Route>
-      </Switch>
+      {/* <FriendsList /> */}
+
+      <Friend />
     </div>
   )
 }

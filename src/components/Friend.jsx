@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 import { baseURL } from '../constants'
 
 function Friend() {
   const [details, setDetails] = useState(null)
-  const params = useParams()
 
   useEffect(() => {
-    axios.get(`${baseURL}/friends/${params.id}`)
+    // can we pull the :id param from the URL?
+    axios.get(`${baseURL}/friends/1`)
       .then(res => {
         setDetails(res.data)
       })
@@ -17,7 +16,7 @@ function Friend() {
         debugger
       })
   },
-    [params.id]
+    []
   )
 
   if (!details) {
