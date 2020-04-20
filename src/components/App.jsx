@@ -29,13 +29,15 @@ export default function App() {
       <header><h1>Friends App</h1><a href='/'>Home</a></header>
       {/* STEP 3 WRAP COMPONENTS IN ROUTES */}
       {/* the path props is what needs to 'match' in the url in order to render */}
-      <Route path='/'>
-        <FriendsList friends={friends} />
-      </Route>
+      <Switch>
+        <Route path='/friends/:id'>
+          <Friend />
+        </Route>
 
-      <Route path='/friends/:id'>
-        <Friend />
-      </Route>
+        <Route path='/'>
+          <FriendsList friends={friends} />
+        </Route>
+      </Switch>
     </div>
   )
 }
